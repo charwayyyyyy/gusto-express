@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GustoExpress | Food Delivery Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Importing the main CSS file */
+        @import url('style.css');
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+
+
+    
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo">GustoExpress</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#tracking">Tracking</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#payment">Payment</a></li>
+            </ul>
+        </nav>
+        <button class="cta-button">Get Started</button>
+    </header>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Delicious Food, Delivered Fast</h1>
+            <p>Experience the future of food delivery with real-time tracking, exclusive restaurants, and seamless payment</p>
+            <button class="cta-button">Order Now</button>
+        </div>
+    </section>
+
+    <!-- Food Menu Section -->
+    <section class="menu" id="menu">
+        <h2 class="section-title">Popular Dishes</h2>
+        <div class="menu-grid">
+            <div class="menu-card floating3d">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Pizza" class="menu-img">
+                <h3>Margherita Pizza</h3>
+                <p>Classic delight with fresh mozzarella, tomatoes, and basil.</p>
+            </div>
+            <div class="menu-card floating3d delay-1">
+                <img src="https://images.unsplash.com/photo-1516685018646-5499d0a7d42f?auto=format&fit=crop&w=400&q=80" alt="Burger" class="menu-img">
+                <h3>Gourmet Burger</h3>
+                <p>Juicy beef patty, cheddar, lettuce, tomato, and signature sauce.</p>
+            </div>
+            <div class="menu-card floating3d delay-2">
+                <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Sushi" class="menu-img">
+                <h3>Salmon Sushi</h3>
+                <p>Fresh salmon slices on perfectly seasoned rice rolls.</p>
+            </div>
+            <div class="menu-card floating3d delay-3">
+                <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Pasta" class="menu-img">
+                <h3>Italian Pasta</h3>
+                <p>Creamy Alfredo sauce tossed with fettuccine and herbs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Counters Section -->
+    <section class="counters" id="counters">
+        <div class="counters-grid">
+            <div class="counter-card floating3d">
+                <div class="counter-value" data-target="10000">0</div>
+                <div class="counter-label">Deliveries</div>
+            </div>
+            <div class="counter-card floating3d delay-02">
+                <div class="counter-value" data-target="500">0</div>
+                <div class="counter-label">Partner Restaurants</div>
+            </div>
+            <div class="counter-card floating3d delay-04">
+                <div class="counter-value" data-target="2000">0</div>
+                <div class="counter-label">Happy Customers</div>
+            </div>
+            <div class="counter-card floating3d delay-06">
+                <div class="counter-value" data-target="99">0</div>
+                <div class="counter-label">Cities Served</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <!-- Testimonials Carousel -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial-slide active">
+                <p>“GustoExpress is a game changer! My food always arrives hot and on time.”</p>
+                <div class="testimonial-author">— Sarah K.</div>
+            </div>
+            <div class="testimonial-slide">
+                <p>“The real-time tracking is so cool. I love knowing exactly when my order will arrive.”</p>
+                <div class="testimonial-author">— Mike D.</div>
+            </div>
+            <div class="testimonial-slide">
+                <p>“Super easy to use and the menu selection is fantastic. Highly recommend!”</p>
+                <div class="testimonial-author">— Priya S.</div>
+            </div>
+            <div class="testimonial-slide">
+                <p>“Secure payments and fast delivery. What more could you want?”</p>
+                <div class="testimonial-author">— James L.</div>
+            </div>
+            <label for="dish-select" class="visually-hidden">Select Dish</label>
+            <select id="dish-select" name="dish" required>
+                <option value="">Select Dish</option>
+                <option>Margherita Pizza</option>
+                <option>Gourmet Burger</option>
+                <option>Salmon Sushi</option>
+                <option>Italian Pasta</option>
+            </select>
+        <form class="order-form floating3d">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="address" placeholder="Delivery Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <label for="order-dish-select" class="visually-hidden">Select Dish</label>
+            <select id="order-dish-select" name="dish" required>
+                <option value="">Select Dish</option>
+                <option>Margherita Pizza</option>
+                <option>Gourmet Burger</option>
+                <option>Salmon Sushi</option>
+                <option>Italian Pasta</option>
+            </select>
+            <button type="submit" class="cta-button">Order Now</button>
+            <div class="order-success hidden">Thank you! Your order has been placed.</div>
+        </form>
+    </section>
+    <section class="features" id="features">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="feature-card floating">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Lightning Fast Delivery</h3>
+                <p>Average delivery time under 30 minutes with our optimized routing system</p>
+            </div>
+            
+            <div class="feature-card floating delay-05">
+                <div class="feature-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Real-time Tracking</h3>
+                <p>Follow your order from restaurant to your doorstep in real-time</p>
+            </div>
+            
+            <div class="feature-card floating delay-1s">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Secure Payments</h3>
+                <p>Multiple payment options with bank-level security encryption</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-time Tracking Section -->
+    <section class="tracking" id="tracking">
+        <h2 class="section-title">Live Order Tracking</h2>
+        <div class="tracking-container">
+            <div class="tracking-content">
+                <h3>Watch Your Food Journey</h3>
+                <p>Our advanced GPS tracking system allows you to follow your order every step of the way. Know exactly when your food will arrive.</p>
+                <ul class="tracking-features-list">
+                    <li>Real-time driver location updates</li>
+                    <li>Estimated arrival time predictions</li>
+                    <li>Live traffic condition adjustments</li>
+                    <li>Driver information and contact</li>
+                </ul>
+                <button class="cta-button">Try It Now</button>
+            </div>
+            <div class="tracking-visual">
+                <div class="map-container">
+                    <div class="map">
+                        <div class="delivery-path"></div>
+                        <div class="delivery-icon">
+                            <i class="fas fa-motorcycle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Dashboard -->
+    <section class="dashboard" id="dashboard">
+        <h2 class="section-title">Restaurant Dashboard</h2>
+        <div class="dashboard-container">
+            <div class="dashboard-preview">
+                <h3 class="dashboard-analytics-title">Restaurant Analytics</h3>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">142</div>
+                        <div class="stat-label">Today's Orders</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">94%</div>
+                        <div class="stat-label">Positive Reviews</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">28 min</div>
+                        <div class="stat-label">Avg. Prep Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$1,842</div>
+                        <div class="stat-label">Today's Revenue</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="ordersChart"></canvas>
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <h3>Powerful Tools for Restaurants</h3>
+                <p>Our comprehensive dashboard gives restaurant owners complete control over their delivery operations.</p>
+                <ul class="dashboard-features-list">
+                    <li>Real-time order management system</li>
+                    <li>Detailed analytics and reporting</li>
+                    <li>Menu and inventory management</li>
+                    <li>Staff scheduling tools</li>
+                    <li>Customer feedback insights</li>
+                </ul>
+                <button class="cta-button">View Dashboard Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment" id="payment">
+        <h2 class="section-title">Secure Payment Options</h2>
+        <p class="payment-description">We offer multiple payment methods with military-grade encryption to ensure your transactions are always secure.</p>
+        
+        <div class="payment-methods">
+            <div class="payment-card">
+                <div class="payment-icon">
+                    <i class="fab fa-cc-visa"></i>
+                </div>
+                <h3>Credit Cards</h3>
+                <p>Visa, Mastercard, American Express</p>
+            </div>
+            
+            <div class="payment-card">
+                <div class="payment-icon">
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+                <h3>PayPal</h3>
+                <p>Secure online payments</p>
+            </div>
+            
+            <div class="payment-card">
+                <div class="payment-icon">
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+                <h3>Apple Pay</h3>
+                <p>Quick and secure payments</p>
+            </div>
+            
+            <div class="payment-card">
+                <div class="payment-icon">
+                    <i class="fab fa-google-pay"></i>
+                </div>
+                <h3>Google Pay</h3>
+                <p>Easy mobile payments</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo logo">GustoExpress</div>
+                <p>Delivering culinary excellence to your doorstep with speed, precision, and passion.</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" class="social-icon" target="_blank" rel="noopener" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" class="footer-link">Home</a></li>
+                    <li><a href="#menu" class="footer-link">Menu</a></li>
+                    <li><a href="#features" class="footer-link">Features</a></li>
+                    <li><a href="#tracking" class="footer-link">Tracking</a></li>
+                    <li><a href="#dashboard" class="footer-link">Dashboard</a></li>
+                    <li><a href="#payment" class="footer-link">Payment</a></li>
+                    <li><a href="#testimonials" class="footer-link">Testimonials</a></li>
+                    <li><a href="#order" class="footer-link">Order</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Contact Us</a></li>
+                    <li><a href="#" class="footer-link">FAQs</a></li>
+                    <li><a href="#" class="footer-link">Delivery Areas</a></li>
+                    <li><a href="#" class="footer-link">Restaurant Signup</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Download Our App</h3>
+                <p class="app-download-description">Get the best experience with our mobile app</p>
+                <div class="app-download-buttons">
+                    <button class="cta-button app-download-btn"><i class="fab fa-apple"></i> App Store</button>
+                    <button class="cta-button app-download-btn"><i class="fab fa-google-play"></i> Play Store</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 GustoExpress. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
+   
+</body>
+</html>
